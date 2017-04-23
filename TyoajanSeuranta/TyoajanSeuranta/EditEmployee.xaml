@@ -1,0 +1,40 @@
+﻿<Window x:Class="TyoajanSeuranta.EditEmployee"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TyoajanSeuranta"
+        mc:Ignorable="d"
+        Title="Muokkaa työntekijän tietoja" Height="230.769" Width="616.864">
+    <Grid>
+		<StackPanel>
+			<StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+				<Button x:Name="ConfirmEdit" HorizontalAlignment="Center" Margin="5" Content="Tallenna muutokset" Width="124"/>
+				<Button x:Name="DeleteEmployee" HorizontalAlignment="Center" Margin="5" Content="Poista" Width="125"/>
+				<Button x:Name="Cancel" HorizontalAlignment="Center" Margin="5" Content="Peruuta" Width="125"/>
+			</StackPanel>
+			<StackPanel Orientation="Horizontal">
+				<StackPanel HorizontalAlignment="Left">
+					<TextBlock HorizontalAlignment="Left" Height=" 17" Margin="30,10,0,0" Text="Etunimi" Width="80"/>
+					<TextBlock HorizontalAlignment="Left" Height=" 17" Margin="30,10,0,0" Text="Sukunimi" Width="80"/>
+					<TextBlock HorizontalAlignment="Left" Height=" 17" Margin="30,10,0,0" Text="Salasana" Width="80"/>
+					<TextBlock HorizontalAlignment="Left" Height=" 17" Margin="30,10,0,0" Text="Admin" Width="80"/>
+				</StackPanel>
+				<StackPanel HorizontalAlignment="Left">
+					<TextBox x:Name="txt_FirstName" HorizontalAlignment="Left" Height=" 17" Margin="30,10,0,0" Width="80"/>
+					<TextBox x:Name="txt_LastName" HorizontalAlignment="Left" Height=" 17" Margin="30,10,0,0" Width="80"/>
+					<TextBox x:Name="txt_Passwd" HorizontalAlignment="Left" Height=" 17" Margin="30,10,0,0" Width="80"/>
+					<TextBox x:Name="txt_IsAdministrator" HorizontalAlignment="Left" Height=" 17" Margin="30,10,0,0" Width="80"/>
+				</StackPanel>
+				<DataGrid Margin="20,0,0,0" ItemsSource="{Binding}" AlternatingRowBackground="Gainsboro" AlternationCount="2">
+					<DataGrid.Columns>
+						<DataGridTextColumn Header="Päivämäärä"/>
+						<DataGridTextColumn Header="Töiden alku"/>
+						<DataGridTextColumn Header="Töiden lopetus"/>
+						<DataGridTextColumn Header="Paikalla"/>
+					</DataGrid.Columns>
+				</DataGrid>
+			</StackPanel>
+		</StackPanel>
+	</Grid>
+</Window>
