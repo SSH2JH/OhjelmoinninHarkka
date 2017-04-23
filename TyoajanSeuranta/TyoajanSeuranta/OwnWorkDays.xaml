@@ -1,0 +1,21 @@
+﻿<Window x:Class="TyoajanSeuranta.OwnWorkDays"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TyoajanSeuranta"
+        mc:Ignorable="d"
+        Title="OwnWorkDays" Height="300" Width="500">
+    <Grid>
+		<StackPanel>
+			<Label x:Name="lb_Welcome" Content="Welcome whoever" FontSize="20" />
+			<DataGrid ItemsSource="{Binding}" AlternatingRowBackground="Gainsboro" AlternationCount="2">
+				<DataGrid.Columns>
+					<DataGridTextColumn Header="Alkoi"/>
+					<DataGridTextColumn Header="Loppui"/>
+					<DataGridTextColumn Header="Päivä yhtensä"/>
+				</DataGrid.Columns>
+			</DataGrid>
+		</StackPanel>
+    </Grid>
+</Window>

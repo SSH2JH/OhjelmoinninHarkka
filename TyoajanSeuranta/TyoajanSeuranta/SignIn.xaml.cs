@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -29,11 +30,36 @@ namespace TyoajanSeuranta {
 
 		private void button_Ok_Click(object sender, RoutedEventArgs e)
 		{
+			Properties.Settings.Default.UserPin = txt_PinCode.Text;
 			if (string.IsNullOrEmpty(txt_PinCode.Text) == true) {
 				txt_signinMessages.Text = "Pin koodi on pakollinen!";
-			} else {
-				Properties.Settings.Default.UserPin = txt_PinCode.Text;
+			} else if (VerifyUserLogin() == true) {
 				this.Close();
+			}
+		}
+		private bool VerifyUserLogin()
+		{
+			string[] userName = new string[2];
+			try {
+				string connStr = Properties.Settings.Default.MySqlLoginString;
+				string sql = string.Format("SELECT FirstName, LastName FROM Employee WHERE Passwd LIKE {0}", Properties.Settings.Default.UserPin);
+				using (MySqlConnection conn = new MySqlConnection(connStr)) {
+					conn.Open();
+					using (MySqlCommand cmd = new MySqlCommand(sql, conn))
+					using (MySqlDataReader reader = cmd.ExecuteReader()) {
+						while (reader.Read()) {
+							userName[0] = reader.GetString(0);
+							userName[1] = reader.GetString(1);
+						}
+					}
+				}
+				Properties.Settings.Default.LoggedInUser = string.Format("{0} {1}", userName[0], userName[1]);
+				return true;
+			}
+			catch (Exception) {
+				txt_signinMessages.Text = "Väärä pin-koodi!";
+				Properties.Settings.Default.UserPin = "";
+				return false;
 			}
 		}
 	}

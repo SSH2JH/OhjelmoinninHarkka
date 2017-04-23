@@ -26,8 +26,19 @@ namespace TyoajanSeuranta {
 		private void SignIn_Click(object sender, RoutedEventArgs e)
 		{
 			SignIn next = new SignIn();
+			// TODO take this into account and remove debug code
+
+			/*if (string.IsNullOrWhiteSpace(Properties.Settings.Default.Server) == true && string.IsNullOrWhiteSpace(Properties.Settings.Default.Catalog) == true &&
+				string.IsNullOrWhiteSpace(Properties.Settings.Default.User) == true && string.IsNullOrWhiteSpace(Properties.Settings.Default.Password) == true) {
+				MySqlLogin whee = new MySqlLogin();
+				whee.ShowDialog();
+			}*/
+
+			
+
 			next.ShowDialog();
 			if (string.IsNullOrEmpty(Properties.Settings.Default.UserPin) == false) {
+				txtb_WellcomeUser.Text = String.Format("Hei {0}!", Properties.Settings.Default.LoggedInUser);
 				sp_MainControls.IsEnabled = true;
 				SignIn.IsEnabled = false;
 			}
@@ -40,6 +51,7 @@ namespace TyoajanSeuranta {
 			SignIn.IsEnabled = true;
 			txtb_IsOk1.Text = "";
 			txtb_IsOk2.Text = "";
+			txtb_WellcomeUser.Text = "Hei";
 		}
 
 		private void btn_SignStart_Click(object sender, RoutedEventArgs e)

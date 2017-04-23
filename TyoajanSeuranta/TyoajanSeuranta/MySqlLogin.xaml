@@ -1,0 +1,24 @@
+﻿<Window x:Class="TyoajanSeuranta.MySqlLogin"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TyoajanSeuranta"
+        mc:Ignorable="d"
+        Title="MySqlLogin" Height="300" Width="300">
+    <Grid>
+		<StackPanel>
+			<Label x:Name="lb_Welcome" HorizontalContentAlignment="Center" Content="Mysql Login" FontSize="20" />
+			<TextBlock TextAlignment="Center" Text="Server ip" />
+			<TextBox x:Name="txt_ServerIp" TextAlignment="Center" Width="200" />
+			<TextBlock TextAlignment="Center" Text="Server catalog" />
+			<TextBox x:Name="txt_ServerCatalog" TextAlignment="Center" Width="200" />
+			<TextBlock TextAlignment="Center" Text="Username" />
+			<TextBox x:Name="txt_ServerUserName" TextAlignment="Center" Width="200" />
+			<TextBlock TextAlignment="Center" Text="Password" />
+			<TextBox x:Name="txt_ServerPassword" TextAlignment="Center" Width="200" />
+			<TextBlock x:Name="txtb_Messages" TextAlignment="Center" Margin="4" />
+			<Button HorizontalAlignment="Center" Margin="40" Width="150" Content="Login" Click="Button_Click" />
+		</StackPanel>
+    </Grid>
+</Window>
