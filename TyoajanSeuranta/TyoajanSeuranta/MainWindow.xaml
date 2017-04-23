@@ -6,7 +6,6 @@
         xmlns:local="clr-namespace:TyoajanSeuranta"
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        <!-- Hello World! -->
-    </Grid>
+	<Grid>
+	</Grid>
 </Window>
