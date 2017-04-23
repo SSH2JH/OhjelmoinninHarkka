@@ -23,13 +23,33 @@ namespace TyoajanSeuranta {
 			InitializeComponent();
 		}
 
-		private void SignOut_Click(object sender, RoutedEventArgs e)
+		private void SignIn_Click(object sender, RoutedEventArgs e)
 		{
 			SignIn next = new SignIn();
 			next.ShowDialog();
 			if (string.IsNullOrEmpty(Properties.Settings.Default.UserPin) == false) {
 				sp_MainControls.IsEnabled = true;
+				SignIn.IsEnabled = false;
 			}
+		}
+
+		private void SignOff_Click(object sender, RoutedEventArgs e)
+		{
+			Properties.Settings.Default.UserPin = "";
+			sp_MainControls.IsEnabled = false;
+			SignIn.IsEnabled = true;
+			txtb_IsOk1.Text = "";
+			txtb_IsOk2.Text = "";
+		}
+
+		private void btn_SignStart_Click(object sender, RoutedEventArgs e)
+		{
+			txtb_IsOk1.Text = "Ok!";
+		}
+
+		private void btn_SignEnd_Click(object sender, RoutedEventArgs e)
+		{
+			txtb_IsOk2.Text = "Ok!";
 		}
 	}
 }

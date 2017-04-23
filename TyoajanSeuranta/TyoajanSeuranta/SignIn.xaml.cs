@@ -33,7 +33,6 @@ namespace TyoajanSeuranta {
 				txt_signinMessages.Text = "Pin koodi on pakollinen!";
 			} else {
 				Properties.Settings.Default.UserPin = txt_PinCode.Text;
-				txt_signinMessages.Text = "Tervetuloa!";
 				this.Close();
 			}
 		}
