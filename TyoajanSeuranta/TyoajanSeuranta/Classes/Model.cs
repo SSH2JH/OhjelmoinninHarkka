@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 namespace TyoajanSeuranta.Classes {
 	class WorkDayItem {
 		public int EmployeeId { get; set; }
-		public DateTime Date { get; set; }
 		public DateTime StartTime { get; set; }
 		public DateTime EndTime { get; set; }
+		public int HoursTogether { get; set; }
 	}
 	class Employee {
 		public int ID { get; set; }

@@ -26,7 +26,7 @@ namespace TyoajanSeuranta {
 		private void SignIn_Click(object sender, RoutedEventArgs e)
 		{
 			SignIn next = new SignIn();
-			// TODO take this into account and remove debug code
+			//TODO take this into account and remove debug code
 
 			/*if (string.IsNullOrWhiteSpace(Properties.Settings.Default.Server) == true && string.IsNullOrWhiteSpace(Properties.Settings.Default.Catalog) == true &&
 				string.IsNullOrWhiteSpace(Properties.Settings.Default.User) == true && string.IsNullOrWhiteSpace(Properties.Settings.Default.Password) == true) {
@@ -37,7 +37,7 @@ namespace TyoajanSeuranta {
 			
 
 			next.ShowDialog();
-			if (string.IsNullOrEmpty(Properties.Settings.Default.UserPin) == false) {
+			if (string.IsNullOrWhiteSpace(Properties.Settings.Default.UserID) == false) {
 				txtb_WellcomeUser.Text = String.Format("Hei {0}!", Properties.Settings.Default.LoggedInUser);
 				sp_MainControls.IsEnabled = true;
 				SignIn.IsEnabled = false;
@@ -46,7 +46,8 @@ namespace TyoajanSeuranta {
 
 		private void SignOff_Click(object sender, RoutedEventArgs e)
 		{
-			Properties.Settings.Default.UserPin = "";
+			Properties.Settings.Default.UserID = "";
+			Properties.Settings.Default.LoggedInUser = "";
 			sp_MainControls.IsEnabled = false;
 			SignIn.IsEnabled = true;
 			txtb_IsOk1.Text = "";
@@ -62,6 +63,12 @@ namespace TyoajanSeuranta {
 		private void btn_SignEnd_Click(object sender, RoutedEventArgs e)
 		{
 			txtb_IsOk2.Text = "Ok!";
+		}
+
+		private void EditWorkHours_Click(object sender, RoutedEventArgs e)
+		{
+			OwnWorkDays next = new OwnWorkDays();
+			next.Show();
 		}
 	}
 }

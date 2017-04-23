@@ -9,13 +9,13 @@
     <Grid>
 		<StackPanel>
 			<Label x:Name="lb_Welcome" Content="Welcome whoever" FontSize="20" />
-			<DataGrid ItemsSource="{Binding}" AlternatingRowBackground="Gainsboro" AlternationCount="2">
+			<DataGrid x:Name="dg_WorkDays" IsReadOnly="True" ItemsSource="{Binding}" AlternatingRowBackground="Gainsboro" AlternationCount="2" AutoGenerateColumns="False">
 				<DataGrid.Columns>
-					<DataGridTextColumn Header="Alkoi"/>
-					<DataGridTextColumn Header="Loppui"/>
-					<DataGridTextColumn Header="Päivä yhtensä"/>
+					<DataGridTextColumn x:Name="s1" Header="Start" Binding="{Binding StartTime}" />
+					<DataGridTextColumn x:Name="s2" Header="End" Binding="{Binding EndTime}" />
 				</DataGrid.Columns>
 			</DataGrid>
+			<TextBlock x:Name="txtb_AllHours" Margin="4" FontSize="16" />
 		</StackPanel>
     </Grid>
 </Window>

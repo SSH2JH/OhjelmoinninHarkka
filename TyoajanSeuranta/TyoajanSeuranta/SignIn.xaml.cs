@@ -30,35 +30,43 @@ namespace TyoajanSeuranta {
 
 		private void button_Ok_Click(object sender, RoutedEventArgs e)
 		{
-			Properties.Settings.Default.UserPin = txt_PinCode.Text;
 			if (string.IsNullOrEmpty(txt_PinCode.Text) == true) {
 				txt_signinMessages.Text = "Pin koodi on pakollinen!";
-			} else if (VerifyUserLogin() == true) {
+			} else if (VerifyUserLogin(txt_PinCode.Text) == true) {
 				this.Close();
 			}
 		}
-		private bool VerifyUserLogin()
+		private bool VerifyUserLogin(string pincode)
 		{
-			string[] userName = new string[2];
+			string[] userName = new string[3];
 			try {
 				string connStr = Properties.Settings.Default.MySqlLoginString;
-				string sql = string.Format("SELECT FirstName, LastName FROM Employee WHERE Passwd LIKE {0}", Properties.Settings.Default.UserPin);
+				string sql = string.Format("SELECT ID, FirstName, LastName FROM Employee WHERE Passwd LIKE {0}", pincode);
 				using (MySqlConnection conn = new MySqlConnection(connStr)) {
 					conn.Open();
 					using (MySqlCommand cmd = new MySqlCommand(sql, conn))
 					using (MySqlDataReader reader = cmd.ExecuteReader()) {
 						while (reader.Read()) {
-							userName[0] = reader.GetString(0);
+							userName[0] = string.Format("{0}", reader.GetInt16(0));
 							userName[1] = reader.GetString(1);
+							userName[2] = reader.GetString(2);
 						}
 					}
 				}
-				Properties.Settings.Default.LoggedInUser = string.Format("{0} {1}", userName[0], userName[1]);
-				return true;
+				if (string.IsNullOrWhiteSpace(userName[1]) == false && string.IsNullOrWhiteSpace(userName[2]) == false) {
+					Properties.Settings.Default.LoggedInUser = string.Format("{0} {1}", userName[1], userName[2]);
+					Properties.Settings.Default.UserID = userName[0];
+					return true;
+				} else {
+					txt_signinMessages.Text = "Väärä pin-koodi!";
+					Properties.Settings.Default.UserID = "";
+					Properties.Settings.Default.LoggedInUser = "";
+					return false;
+				}
 			}
-			catch (Exception) {
-				txt_signinMessages.Text = "Väärä pin-koodi!";
-				Properties.Settings.Default.UserPin = "";
+			catch (Exception ex) {
+				txt_signinMessages.Text = ex.Message;
+				Properties.Settings.Default.UserID = "";
 				return false;
 			}
 		}

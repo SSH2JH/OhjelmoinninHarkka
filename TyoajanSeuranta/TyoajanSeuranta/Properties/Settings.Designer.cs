@@ -26,12 +26,12 @@ namespace TyoajanSeuranta.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string UserPin {
+        public string UserID {
             get {
-                return ((string)(this["UserPin"]));
+                return ((string)(this["UserID"]));
             }
             set {
-                this["UserPin"] = value;
+                this["UserID"] = value;
             }
         }
         
