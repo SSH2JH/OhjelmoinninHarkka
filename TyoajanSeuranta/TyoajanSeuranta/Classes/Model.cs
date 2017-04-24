@@ -5,12 +5,18 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace TyoajanSeuranta.Classes {
+	/// <summary>
+	/// This class handles Employee's workday model
+	/// </summary>
 	class WorkDayItem {
 		public int EmployeeId { get; set; }
 		public DateTime StartTime { get; set; }
 		public DateTime EndTime { get; set; }
 		public int HoursTogether { get; set; }
 	}
+	/// <summary>
+	/// This class holds employee's personal data
+	/// </summary>
 	class Employee {
 		public int ID { get; set; }
 		public string FirstName { get; set; }
@@ -20,6 +26,9 @@ namespace TyoajanSeuranta.Classes {
 		public int Passwd { get; set; }
 		public bool IsAdministrator { get; set; }
 	}
+	/// <summary>
+	/// Here are all the multipliers
+	/// </summary>
 	class HourMultipliers {
 		public int MultiplierID { get; set; }
 		public string Name { get; set; }
@@ -27,6 +36,7 @@ namespace TyoajanSeuranta.Classes {
 
 		public float Multiplier
 		{
+			// Multiplier probably has no reason to be under 1
 			get { return multiplier; }
 			set {
 				multiplier = value;

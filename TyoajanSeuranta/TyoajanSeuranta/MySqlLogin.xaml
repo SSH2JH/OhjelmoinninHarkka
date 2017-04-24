@@ -8,7 +8,7 @@
         Title="MySqlLogin" Height="300" Width="300">
     <Grid>
 		<StackPanel>
-			<Label x:Name="lb_Welcome" HorizontalContentAlignment="Center" Content="Mysql Login" FontSize="20" />
+			<Label x:Name="lb_Welcome" HorizontalContentAlignment="Center" Content="Mysql Login DEBUG/TEST ONLY" FontSize="20" />
 			<TextBlock TextAlignment="Center" Text="Server ip" />
 			<TextBox x:Name="txt_ServerIp" TextAlignment="Center" Width="200" />
 			<TextBlock TextAlignment="Center" Text="Server catalog" />

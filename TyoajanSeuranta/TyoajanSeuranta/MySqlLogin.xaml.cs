@@ -20,11 +20,18 @@ namespace TyoajanSeuranta {
 	public partial class MySqlLogin : Window {
 		public MySqlLogin()
 		{
-			InitializeComponent();
+			InitializeComponent(); 
 		}
-
+		//
+		//
+		//
+		//					HOX HOX HOX --------- This code is meant for debugging and demonstration purposes only. Don't confuse users with this.
+		//
+		//
+		//
 		private void Button_Click(object sender, RoutedEventArgs e)
 		{
+			// This place populates mysql credentials if necessary
 			if (string.IsNullOrWhiteSpace(txt_ServerIp.Text) == false && string.IsNullOrWhiteSpace(txt_ServerCatalog.Text) == false &&
 				string.IsNullOrWhiteSpace(txt_ServerUserName.Text) == false && string.IsNullOrWhiteSpace(txt_ServerPassword.Text) == false) {
 				Properties.Settings.Default.Server = txt_ServerIp.Text;
@@ -35,6 +42,7 @@ namespace TyoajanSeuranta {
 					this.Close();
 				}
 			} else {
+				// No empty text boxes pretty please
 				txtb_Messages.Text = "Please enter the credentials!";
 			}
 		}

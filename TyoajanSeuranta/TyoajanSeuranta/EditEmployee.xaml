@@ -8,6 +8,7 @@
         Title="Muokkaa työntekijän tietoja" Height="230.769" Width="616.864">
     <Grid>
 		<StackPanel>
+			<!-- This whole window for now simply is a simple placeholder-->
 			<StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
 				<Button x:Name="ConfirmEdit" HorizontalAlignment="Center" Margin="5" Content="Tallenna muutokset" Width="124"/>
 				<Button x:Name="DeleteEmployee" HorizontalAlignment="Center" Margin="5" Content="Poista" Width="125"/>
@@ -28,8 +29,8 @@
 				</StackPanel>
 				<DataGrid Margin="20,0,0,0" ItemsSource="{Binding}" AlternatingRowBackground="Gainsboro" AlternationCount="2">
 					<DataGrid.Columns>
-						<DataGridTextColumn Header="Päivämäärä"/>
-						<DataGridTextColumn Header="Töiden alku"/>
+						<DataGridTextColumn Header="Päivämäärä"/> <!-- The syntax to add the binding follows as such...-->
+						<DataGridTextColumn Header="Töiden alku"/> <!-- Binding="{Binding classPorperty}"-->
 						<DataGridTextColumn Header="Töiden lopetus"/>
 						<DataGridTextColumn Header="Paikalla"/>
 					</DataGrid.Columns>

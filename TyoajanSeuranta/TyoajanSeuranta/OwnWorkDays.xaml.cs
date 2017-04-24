@@ -27,10 +27,15 @@ namespace TyoajanSeuranta {
 		private void LoadDataGrid()
 		{
 			try {
+				// Here we employ employer spesific views for their workhours and such.
 				lb_Welcome.Content = Properties.Settings.Default.LoggedInUser;
 				Mysql_UserLoadWorkdays svmo = new Mysql_UserLoadWorkdays();
-				svmo.LoadFromMysql();
+				// Pull the stuff from sqldb, refer to classes->viewmodel
+
+				svmo.LoadFromMysql(); // Mysql method!
+
 				dg_WorkDays.DataContext = svmo.UserWorkDays;
+				// Calculates the overall hours of one user. Usefull for fututure development!!!
 				int total = svmo.UserWorkDays.Sum(item => item.HoursTogether);
 				txtb_AllHours.Text = string.Format("Yhteensä: {0} h", total);
 			}

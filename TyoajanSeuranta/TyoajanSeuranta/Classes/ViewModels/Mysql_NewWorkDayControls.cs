@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace TyoajanSeuranta.Classes.ViewModels {
 	class AddFirstEntry {
+		/// <summary>
+		/// This method creates a new row and fills it with current date and time
+		/// </summary>
 		public void AddNewEntry()
 		{
 			try {
@@ -23,6 +26,10 @@ namespace TyoajanSeuranta.Classes.ViewModels {
 				throw;
 			}
 		}
+
+		/// <summary>
+		/// This method updates the row and fills it with current date and time for employee's end of workday
+		/// </summary>
 		public void AddLastEntry()
 		{
 			try {

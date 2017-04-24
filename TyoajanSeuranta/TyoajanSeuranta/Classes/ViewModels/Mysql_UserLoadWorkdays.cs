@@ -10,6 +10,10 @@ using TyoajanSeuranta.Classes;
 namespace TyoajanSeuranta.Classes.ViewModels {
 	class Mysql_UserLoadWorkdays {
 		public List<WorkDayItem> UserWorkDays { get; set; }
+		/// <summary>
+		/// This class probably holds too little stuff but it's good to be here just to hold the list property
+		/// Aside from that the next method populates Workdayitem object for further analysis, such as datagrids
+		/// </summary>
 		public void LoadFromMysql()
 		{
 			try {
