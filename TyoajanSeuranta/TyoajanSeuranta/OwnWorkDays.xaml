@@ -17,5 +17,5 @@
 			</DataGrid>
 			<TextBlock x:Name="txtb_AllHours" Margin="4" FontSize="16" />
 		</StackPanel>
-    </Grid>
+	</Grid>
 </Window>

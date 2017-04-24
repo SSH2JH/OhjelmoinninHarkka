@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using TyoajanSeuranta.Classes.ViewModels;
 
 namespace TyoajanSeuranta {
 	/// <summary>
@@ -28,8 +29,8 @@ namespace TyoajanSeuranta {
 			SignIn next = new SignIn();
 			//TODO take this into account and remove debug code
 
-			/*if (string.IsNullOrWhiteSpace(Properties.Settings.Default.Server) == true && string.IsNullOrWhiteSpace(Properties.Settings.Default.Catalog) == true &&
-				string.IsNullOrWhiteSpace(Properties.Settings.Default.User) == true && string.IsNullOrWhiteSpace(Properties.Settings.Default.Password) == true) {
+			/*if (string.IsNullOrWhiteSpace(Properties.Settings.Default.Server) == true || string.IsNullOrWhiteSpace(Properties.Settings.Default.Catalog) == true ||
+				string.IsNullOrWhiteSpace(Properties.Settings.Default.User) == true || string.IsNullOrWhiteSpace(Properties.Settings.Default.Password) == true) {
 				MySqlLogin whee = new MySqlLogin();
 				whee.ShowDialog();
 			}*/
@@ -49,6 +50,8 @@ namespace TyoajanSeuranta {
 			Properties.Settings.Default.UserID = "";
 			Properties.Settings.Default.LoggedInUser = "";
 			sp_MainControls.IsEnabled = false;
+			btn_SignStart.IsEnabled = true;
+			btn_SignEnd.IsEnabled = true;
 			SignIn.IsEnabled = true;
 			txtb_IsOk1.Text = "";
 			txtb_IsOk2.Text = "";
@@ -57,12 +60,28 @@ namespace TyoajanSeuranta {
 
 		private void btn_SignStart_Click(object sender, RoutedEventArgs e)
 		{
-			txtb_IsOk1.Text = "Ok!";
+			try {
+				AddFirstEntry controls = new AddFirstEntry();
+				controls.AddNewEntry();
+				txtb_IsOk1.Text = "Ok!";
+				btn_SignStart.IsEnabled = false;
+			}
+			catch (Exception ex) {
+				MessageBox.Show(ex.Message);
+			}
 		}
 
 		private void btn_SignEnd_Click(object sender, RoutedEventArgs e)
 		{
-			txtb_IsOk2.Text = "Ok!";
+			try {
+				AddFirstEntry controls = new AddFirstEntry();
+				controls.AddLastEntry();
+				txtb_IsOk2.Text = "Ok!";
+				btn_SignEnd.IsEnabled = false;
+			}
+			catch (Exception ex) {
+				MessageBox.Show(ex.Message);
+			}
 		}
 
 		private void EditWorkHours_Click(object sender, RoutedEventArgs e)

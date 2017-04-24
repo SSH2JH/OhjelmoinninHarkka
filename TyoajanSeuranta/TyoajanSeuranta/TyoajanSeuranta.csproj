@@ -60,6 +60,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Classes\Model.cs" />
+    <Compile Include="Classes\ViewModels\Mysql_NewWorkDayControls.cs" />
     <Compile Include="Classes\ViewModels\Mysql_UserLoadWorkdays.cs" />
     <Compile Include="EditEmployee.xaml.cs">
       <DependentUpon>EditEmployee.xaml</DependentUpon>
