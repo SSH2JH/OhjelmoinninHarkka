@@ -22,8 +22,9 @@ namespace TyoajanSeuranta.Classes.ViewModels {
 					cmd.ExecuteNonQuery();
 				}
 			}
-			catch {
-				throw;
+			catch { 
+
+                throw;
 			}
 		}
 

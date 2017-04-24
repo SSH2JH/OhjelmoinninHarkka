@@ -21,7 +21,10 @@ namespace TyoajanSeuranta {
 		public SignIn()
 		{
 			InitializeComponent();
-		}
+            txt_PinCode.Focusable = true;
+            Keyboard.Focus(txt_PinCode);
+        }
+
 
 		/// <summary>
 		/// User cancels the login and nothing happens
@@ -40,16 +43,20 @@ namespace TyoajanSeuranta {
 		/// <param name="e"></param>
 		private void button_Ok_Click(object sender, RoutedEventArgs e)
 		{
-			// Checks if the pincode textbox is empty
-			if (string.IsNullOrEmpty(txt_PinCode.Text) == true) {
-				// It was empty!
-				txt_signinMessages.Text = "Pin koodi on pakollinen!";
-			} else if (VerifyUserLogin(txt_PinCode.Text) == true) {
-				// This is a little bit complicated one. If statement checks from a boolean method wether the user login is valid
-				// If it is we return to main window
-				this.Close();
-			}
-		}
+            // Checks if the pincode textbox is empty
+            if (string.IsNullOrEmpty(txt_PinCode.Text) == true)
+            {
+                // It was empty!
+                txt_signinMessages.Text = "Pin koodi on pakollinen!";
+            }
+            else if (VerifyUserLogin(txt_PinCode.Text) == true)
+            {
+                // This is a little bit complicated one. If statement checks from a boolean method wether the user login is valid
+                // If it is we return to main window
+                this.Close();
+            }
+        }
+
 		private bool VerifyUserLogin(string pincode)
 		{
 			// We create array of strings for the information we require from the mysql database for userlogin

@@ -10,9 +10,20 @@ namespace TyoajanSeuranta.Classes {
 	/// </summary>
 	class WorkDayItem {
 		public int EmployeeId { get; set; }
-		public DateTime StartTime { get; set; }
+        public DateTime date;
+
+        public string Date
+        {
+            get {
+                string[] s;
+                s = date.ToString().Split(' ');
+                return s[0];
+            }
+        }
+
+        public DateTime StartTime { get; set; }
 		public DateTime EndTime { get; set; }
-		public int HoursTogether { get; set; }
+		public float WorkHours { get; set; }
 	}
 	/// <summary>
 	/// This class holds employee's personal data

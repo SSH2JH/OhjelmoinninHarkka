@@ -29,14 +29,15 @@ namespace TyoajanSeuranta {
 			try {
 				// Here we employ employer spesific views for their workhours and such.
 				lb_Welcome.Content = Properties.Settings.Default.LoggedInUser;
-				Mysql_UserLoadWorkdays svmo = new Mysql_UserLoadWorkdays();
+				Mysql_UserLoadWorkdays WorkDayViewModel = new Mysql_UserLoadWorkdays();
 				// Pull the stuff from sqldb, refer to classes->viewmodel
 
-				svmo.LoadFromMysql(); // Mysql method!
+				WorkDayViewModel.LoadFromMysql(); // Mysql method!
 
-				dg_WorkDays.DataContext = svmo.UserWorkDays;
+				dg_WorkDays.DataContext = WorkDayViewModel.UserWorkDays;
+                //dg_WorkDays.Columns[0].
 				// Calculates the overall hours of one user. Usefull for fututure development!!!
-				int total = svmo.UserWorkDays.Sum(item => item.HoursTogether);
+				float total = WorkDayViewModel.UserWorkDays.Sum(item => item.WorkHours);
 				txtb_AllHours.Text = string.Format("Yhteensä: {0} h", total);
 			}
 			catch (Exception ex) {

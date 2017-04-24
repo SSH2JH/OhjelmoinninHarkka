@@ -11,9 +11,11 @@
 			<Label x:Name="lb_Welcome" Content="Welcome whoever" FontSize="20" />
 			<DataGrid x:Name="dg_WorkDays" IsReadOnly="True" ItemsSource="{Binding}" AlternatingRowBackground="Gainsboro" AlternationCount="2" AutoGenerateColumns="False">
 				<DataGrid.Columns>
-					<DataGridTextColumn x:Name="s1" Header="Start" Binding="{Binding StartTime}" />
-					<DataGridTextColumn x:Name="s2" Header="End" Binding="{Binding EndTime}" />
-				</DataGrid.Columns>
+                    <DataGridTextColumn Header="Päivä" Binding="{Binding StartTime.date}" />
+                    <DataGridTextColumn Header="Aloitus" Binding="{Binding StartTime.TimeOfDay}" />
+					<DataGridTextColumn Header="Lopetus" Binding="{Binding EndTime.TimeOfDay}" />
+                    <DataGridTextColumn Header="Päivä yhteensä" Binding="{Binding WorkHours}" />
+                </DataGrid.Columns>
 			</DataGrid>
 			<TextBlock x:Name="txtb_AllHours" Margin="4" FontSize="16" />
 		</StackPanel>

@@ -26,9 +26,10 @@ namespace TyoajanSeuranta.Classes.ViewModels {
 					using (MySqlDataReader reader = cmd.ExecuteReader()) {
 						while (reader.Read()) {
 							WorkDayItem s = new WorkDayItem();
-							s.StartTime = reader.GetDateTime(0);
+                            s.StartTime = reader.GetDateTime(0);
+                            s.date = s.StartTime;
 							s.EndTime = reader.GetDateTime(1);
-							s.HoursTogether = reader.GetInt16(2);
+							s.WorkHours = reader.GetInt16(2);
 							userworkdays.Add(s);
 						}
 						UserWorkDays = userworkdays;

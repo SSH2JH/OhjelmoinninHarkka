@@ -34,10 +34,10 @@ namespace TyoajanSeuranta {
 			// This place populates mysql credentials if necessary
 			if (string.IsNullOrWhiteSpace(txt_ServerIp.Text) == false && string.IsNullOrWhiteSpace(txt_ServerCatalog.Text) == false &&
 				string.IsNullOrWhiteSpace(txt_ServerUserName.Text) == false && string.IsNullOrWhiteSpace(txt_ServerPassword.Text) == false) {
-				Properties.Settings.Default.Server = txt_ServerIp.Text;
-				Properties.Settings.Default.Catalog = txt_ServerCatalog.Text;
-				Properties.Settings.Default.User = txt_ServerUserName.Text;
-				Properties.Settings.Default.Password = txt_ServerPassword.Text;
+				//Properties.Settings.Default.Server = txt_ServerIp.Text;
+				//Properties.Settings.Default.Catalog = txt_ServerCatalog.Text;
+				//Properties.Settings.Default.User = txt_ServerUserName.Text;
+				//Properties.Settings.Default.Password = txt_ServerPassword.Text;
 				if (checkIfServerIsValid() == true) {
 					this.Close();
 				}

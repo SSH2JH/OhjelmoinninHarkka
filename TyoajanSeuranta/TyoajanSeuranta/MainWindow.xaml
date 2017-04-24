@@ -6,32 +6,33 @@
         xmlns:local="clr-namespace:TyoajanSeuranta"
         mc:Ignorable="d"
         Title="Työnaikaseuranta" Height="250" Width="300" ResizeMode="CanMinimize">
-	<Grid>
-		<DockPanel>
-			<Menu DockPanel.Dock="Top">
-				<!-- User login happens here-->
-				<MenuItem x:Name="SignIn" Header="_Kirjaudu Sisään" Click="SignIn_Click" />
-				<!-- Edit employee is for now just a placeholder -->
-				<MenuItem x:Name="EditEmployee" IsEnabled="False" Header="_Muokkaa työntekijän tietoja" HorizontalAlignment="left"/>
-			</Menu>
-		</DockPanel>
-		<!-- Main Controls are found here-->
-		<StackPanel x:Name="sp_MainControls" IsEnabled="False" Margin="0,22,0,0">
-			<TextBlock x:Name="txtb_WellcomeUser" Text="Hei!" TextAlignment="Center" FontSize="16" />
-			<!-- Editworkhours prints a invididual employee's work hours and entries-->
-			<Button x:Name="EditWorkHours" Content="Näytä omat merkinnät" HorizontalAlignment="Center" Height="30" Margin="0,10,0,0" VerticalAlignment="Top" Width="187" Click="EditWorkHours_Click"/>
-			<StackPanel Orientation="Horizontal">
-				<!-- Here Employee begins his workday--> 
-				<Button x:Name="btn_SignStart" Content="Kirjaa työn aloitus" HorizontalAlignment="Center" Margin="5" VerticalAlignment="Top" Width="187" Height="30" Click="btn_SignStart_Click"/>
-				<TextBlock x:Name="txtb_IsOk1" TextAlignment="Center" VerticalAlignment="Center" Width="60" />
-			</StackPanel>
-			<StackPanel Orientation="Horizontal">
-				<!-- Here Employee ends his workday-->
-				<Button x:Name="btn_SignEnd" Content="Kirjaa töistä poistuminen" HorizontalAlignment="center" Margin="5" VerticalAlignment="Top" Width="187" Height="30" Click="btn_SignEnd_Click"/>
-				<TextBlock x:Name="txtb_IsOk2" TextAlignment="Center" VerticalAlignment="Center" Width="60" />
-			</StackPanel>
-			<!-- User logout happens here-->
-			<Button x:Name="SignOff" Content="Kirjaudu Ulos" HorizontalAlignment="center" Height="30" Margin="5"  Width="187" Click="SignOff_Click"/>
-		</StackPanel>
-	</Grid>
+    <Grid>
+        <DockPanel>
+            <Menu DockPanel.Dock="Top">
+                <!-- User login happens here-->
+                <MenuItem x:Name="SignIn" Header="_Kirjaudu Sisään" Click="SignIn_Click" />
+                <!-- Edit employee is for now just a placeholder -->
+                <MenuItem x:Name="EditEmployee" IsEnabled="False" Header="_Muokkaa työntekijän tietoja" HorizontalAlignment="left"/>
+            </Menu>
+        </DockPanel>
+        <!-- Main Controls are found here-->
+        <StackPanel x:Name="sp_MainControls" IsEnabled="False" Margin="0,22,0,0">
+            <TextBlock x:Name="txtb_WellcomeUser" Text="Hei!" TextAlignment="Center" FontSize="16" />
+            <!-- Editworkhours prints a invididual employee's work hours and entries-->
+            <Button x:Name="EditWorkHours" Content="Näytä omat merkinnät" HorizontalAlignment="Center" Height="30" Margin="0,10,0,0" VerticalAlignment="Top" Width="187" Click="EditWorkHours_Click"/>
+            <StackPanel Orientation="Horizontal">
+                <!-- Here Employee begins his workday-->
+                <!-- Here Employee begins his workday-->
+                <Button x:Name="btn_SignStart" Content="Kirjaa työn aloitus" HorizontalAlignment="Center" Margin="5" VerticalAlignment="Top" Width="187" Height="30" Click="btn_SignStart_Click"/>
+                <TextBlock x:Name="txtb_IsOk1" TextAlignment="Center" VerticalAlignment="Center" Width="60" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <!-- Here Employee ends his workday-->
+                <Button x:Name="btn_SignEnd" Content="Kirjaa töistä poistuminen" HorizontalAlignment="center" Margin="5" VerticalAlignment="Top" Width="187" Height="30" Click="btn_SignEnd_Click"/>
+                <TextBlock x:Name="txtb_IsOk2" TextAlignment="Center" VerticalAlignment="Center" Width="60" />
+            </StackPanel>
+            <!-- User logout happens here-->
+            <Button x:Name="SignOff" Content="Kirjaudu Ulos" HorizontalAlignment="center" Height="30" Margin="5"  Width="187" Click="SignOff_Click"/>
+        </StackPanel>
+    </Grid>
 </Window>

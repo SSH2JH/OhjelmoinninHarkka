@@ -22,7 +22,7 @@ namespace TyoajanSeuranta {
 		public MainWindow()
 		{
 			InitializeComponent();
-		}
+        }
 
 		/// <summary>
 		/// SignIn_Click the logic for user login. It handles the initial mysql access and user credentials and stores them
@@ -33,16 +33,19 @@ namespace TyoajanSeuranta {
 		{
 			SignIn next = new SignIn();
 
-			//TODO take this into account and remove debug code
-			// This is debug code for testing and demonstration purposes. It checks whether values in application config are present, if not, ask them before userlogin
+			////TODO take this into account and remove debug code
+			//// This is debug code for testing and demonstration purposes. It checks whether values in application config are present, if not, ask them before userlogin
 			if (string.IsNullOrWhiteSpace(Properties.Settings.Default.Server) == true || string.IsNullOrWhiteSpace(Properties.Settings.Default.Catalog) == true ||
 				string.IsNullOrWhiteSpace(Properties.Settings.Default.User) == true || string.IsNullOrWhiteSpace(Properties.Settings.Default.Password) == true) {
 				MySqlLogin whee = new MySqlLogin();
 				whee.ShowDialog();
 			}
+            Properties.Settings.Default.MySqlLoginString = string.Format("Data source={0};Initial Catalog={1};user={2};password={3}",
+                Properties.Settings.Default.Server, Properties.Settings.Default.Catalog, Properties.Settings.Default.User,
+                Properties.Settings.Default.Password);
 
-			// Login dialog opens and asks for user credentials
-			next.ShowDialog();
+            // Login dialog opens and asks for user credentials
+            next.ShowDialog();
 			// This if statement checks whether the saved UserID property is null or not and return boolean
 			if (string.IsNullOrWhiteSpace(Properties.Settings.Default.UserID) == false) {
 				// If all is good we enable the UI
@@ -67,21 +70,13 @@ namespace TyoajanSeuranta {
 			txtb_WellcomeUser.Text = "Hei";
 		}
 
-		private void btn_SignStart_Click(object sender, RoutedEventArgs e)
-		{
-			// This button allows employee to start their workday
-			try {
-				AddFirstEntry controls = new AddFirstEntry();
-				// In the next method happens all the sql magic. You can find it under classes and viewmodel
-				controls.AddNewEntry();
-				// also disable the button for this session because why would you start workday two times per day
-				txtb_IsOk1.Text = "Ok!";
-				btn_SignStart.IsEnabled = false;
-			}
-			catch (Exception ex) {
-				MessageBox.Show(ex.Message);
-			}
-		}
+        private void btn_SignStart_Click(object sender, RoutedEventArgs e)
+        {
+            SignToWork signtowork = new SignToWork();
+            signtowork.ShowDialog();
+
+        }
+
 
 		private void btn_SignEnd_Click(object sender, RoutedEventArgs e)
 		{
@@ -90,7 +85,7 @@ namespace TyoajanSeuranta {
 				AddFirstEntry controls = new AddFirstEntry();
 				controls.AddLastEntry();
 				txtb_IsOk2.Text = "Ok!";
-				btn_SignEnd.IsEnabled = false;
+                btn_SignEnd.IsEnabled = false;
 			}
 			catch (Exception ex) {
 				MessageBox.Show(ex.Message);

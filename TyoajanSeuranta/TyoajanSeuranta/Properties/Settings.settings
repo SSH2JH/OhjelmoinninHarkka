@@ -6,16 +6,16 @@
       <Value Profile="(Default)" />
     </Setting>
     <Setting Name="Server" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">212.47.235.10</Value>
     </Setting>
     <Setting Name="User" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">WorkHourProject</Value>
     </Setting>
     <Setting Name="Password" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">FYuPuI2ikv314aAcqLpSBNObrxW66g</Value>
     </Setting>
     <Setting Name="Catalog" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">project</Value>
     </Setting>
     <Setting Name="MySqlLoginString" Type="System.String" Scope="User">
       <Value Profile="(Default)" />

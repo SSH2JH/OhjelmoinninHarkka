@@ -37,7 +37,7 @@ namespace TyoajanSeuranta.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("212.47.235.10")]
         public string Server {
             get {
                 return ((string)(this["Server"]));
@@ -49,7 +49,7 @@ namespace TyoajanSeuranta.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("WorkHourProject")]
         public string User {
             get {
                 return ((string)(this["User"]));
@@ -61,7 +61,7 @@ namespace TyoajanSeuranta.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("FYuPuI2ikv314aAcqLpSBNObrxW66g")]
         public string Password {
             get {
                 return ((string)(this["Password"]));
@@ -73,7 +73,7 @@ namespace TyoajanSeuranta.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("project")]
         public string Catalog {
             get {
                 return ((string)(this["Catalog"]));
