@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TyoajanSeuranta"
         mc:Ignorable="d"
-        Title="SignToWork" Height="300" Width="300">
+        Title="Kirjaa työpäivän alku" Height="300" Width="300">
     <Grid>
         <Button x:Name="btn_SignToWork_OK" Content="Kirjaa töihin tulo" HorizontalAlignment="Left" Margin="42,220,0,0" VerticalAlignment="Top" Width="110" Click="btn_SignToWork_OK_Click"/>
         <TextBox x:Name="txt_SignToWork" HorizontalAlignment="Left" Height="129" Margin="42,71,0,0" TextWrapping="Wrap" Text="Arkipyhä tai muu poikkeus" VerticalAlignment="Top" Width="212"/>

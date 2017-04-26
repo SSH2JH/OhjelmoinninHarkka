@@ -11,13 +11,13 @@ namespace TyoajanSeuranta.Classes {
 	class WorkDayItem {
 		public int EmployeeId { get; set; }
         public DateTime date;
+		private string tmp;
 
         public string Date
         {
             get {
-                string[] s;
-                s = date.ToString().Split(' ');
-                return s[0];
+				tmp = date.ToString("dd.MM.yyyy");
+				return tmp;
             }
         }
 

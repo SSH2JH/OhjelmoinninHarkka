@@ -12,7 +12,7 @@
       <Value Profile="(Default)">WorkHourProject</Value>
     </Setting>
     <Setting Name="Password" Type="System.String" Scope="User">
-      <Value Profile="(Default)">FYuPuI2ikv314aAcqLpSBNObrxW66g</Value>
+      <Value Profile="(Default)" />
     </Setting>
     <Setting Name="Catalog" Type="System.String" Scope="User">
       <Value Profile="(Default)">project</Value>

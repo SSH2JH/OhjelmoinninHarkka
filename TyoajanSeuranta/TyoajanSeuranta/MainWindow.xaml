@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TyoajanSeuranta"
         mc:Ignorable="d"
-        Title="Työnaikaseuranta" Height="250" Width="300" ResizeMode="CanMinimize">
+        Title="Työaika seuranta" Height="250" Width="300" ResizeMode="CanMinimize">
     <Grid>
         <DockPanel>
             <Menu DockPanel.Dock="Top">
